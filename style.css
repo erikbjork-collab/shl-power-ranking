@@ -1,12 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background: #343541;
   color: #333;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
+  color: white; 
 }
 
 button {
@@ -47,4 +48,5 @@ tr:nth-child(even) {
 
 tr:hover {
   background: #e0f7fa;
+
 }
