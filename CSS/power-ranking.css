@@ -41,8 +41,9 @@ tr:hover {
 }
 
 #table-container td:nth-child(2) {
-  color: #black;   /* färg på poängen */
+  color: black;   /* färg på poängen */
   font-weight: bold;
 }
+
 
 
