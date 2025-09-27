@@ -2,83 +2,125 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <title>SHL Power Ranking</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>SHL Power Ranking</h1>
-  <h3>Uppdaterat 26/9-25 - 23:13</h3>
-  
-  <button onclick="loadCSV()">Uppdatera tabell</button>
-
-  <div id="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Lag</th>
-          <th>Score</th>
-        </tr>
-      </thead>
-      <tbody id="ranking-body">
-        <!-- Tabellen fylls av JavaScript -->
-      </tbody>
-    </table>
-  </div>
-
-  <script>
-    // Mappa lagnamn till loggor
-    const logos = {
-      "Färjestad BK": "logos/farjestad.png",
-      "Timrå IK": "logos/timra.png",
-      "Luleå Hockey": "logos/lulea.png",
-      "Växjö Lakers": "logos/vaxjo.png",
-      "Skellefteå AIK": "logos/skelleftea.png",
-      "Frölunda HC": "logos/frolunda.png",
-      "Leksands IF": "logos/leksand.png",
-      "Örebro Hockey": "logos/orebro.png",
-      "Rögle BK": "logos/rogle.png",
-      "Djurgården Hockey": "logos/djurgarden.png",
-      "HV71": "logos/hv71.png",
-      "Brynäs IF": "logos/brynas.png",
-      "Linköping HC": "logos/linkoping.png",
-      "Malmö Redhawks": "logos/malmo.png"
-    };
-
-    async function loadCSV() {
-      const response = await fetch('ranking.csv');
-      const text = await response.text();
-      const lines = text.trim().split('\n');
-      const tbody = document.getElementById('ranking-body');
-      tbody.innerHTML = '';
-
-      for (let line of lines) {
-        const [lag, poang] = line.split(',');
-        const tr = document.createElement('tr');
-
-        const tdLag = document.createElement('td');
-        const img = document.createElement('img');
-        img.src = logos[lag.trim()];
-        img.alt = lag.trim();
-        img.width = 40;
-        img.height = 40;
-        tdLag.appendChild(img);
-
-        const tdPoang = document.createElement('td');
-        tdPoang.textContent = poang.trim();
-
-        tr.appendChild(tdLag);
-        tr.appendChild(tdPoang);
-        tbody.appendChild(tr);
-      }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hockeyportalen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d1b2a;
+      color: #e0e1dd;
     }
 
-    // Ladda tabellen direkt när sidan öppnas
-    window.onload = loadCSV;
-  </script>
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #1b263b;
+    }
 
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #f4a261;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #1b263b;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      margin: 1rem;
+      color: #f4a261;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin: 0 1rem 1rem 1rem;
+      color: #e0e1dd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏒 Hockeyportalen</h1>
+    <p>En samlingsplats för statistik, kalkylatorer och hockeynörderi</p>
+  </header>
+
+  <main class="grid">
+    <a href="06-era.html" class="card">
+      <img src="charlie-conacher-ny-amerks.jpeg" alt="06-era">
+      <h2>NHL 06-era</h2>
+      <p>Justering från 1917 till 1967.</p>
+    </a>
+
+    <a href="Expansion-era.html" class="card">
+      <img src="sharks-joe-thornton-injury-acl-mcl-knee-tear-playoffsjpg.jpg" alt="Expansion-era">
+      <h2>NHL Expansion-era</h2>
+      <p>Justering från 1967 till 2025.</p>
+    </a>
+
+    <a href="SHL.html" class="card">
+      <img src="thumb_1920.png" alt="SHL">
+      <h2>SHL</h2>
+      <p>Justering SHL från 1975 till 2025.</p>
+    </a>
+
+    <a href="SHL-Fantasy.html" class="card">
+      <img src="og-share-img.png" alt="SHL Fantasy">
+      <h2>SHL Fantasy</h2>
+      <p>Identifiering för prisjusteringar och kalkylator.</p>
+    </a>
+
+    <a href="SHL-Power-Ranking.html" class="card">
+      <img src="power_ranking_shl.jpg" alt="SHL Power Ranking">
+      <h2>SHL Power Ranking</h2>
+      <p>Vår ranking av lagens styrkor och svagheter.</p>
+    </a>
+
+    <a href="VsX.html" class="card">
+      <img src="ChatGPT Image 27 sep. 2025 01_10_52.png" alt="Misc.">
+      <h2>NHL VsX</h2>
+      <p>Övriga kalkylatorer och material.</p>
+    </a>
+
+    <a href="NHL-All-time-ranking.html" class="card">
+      <img src="ChatGPT Image 27 sep. 2025 01_13_24.png" alt="Misc.">
+      <h2>NHL All Time Ranking</h2>
+      <p>Övriga kalkylatorer och material.</p>
+    </a>
+
+    <a href="Misc.html" class="card">
+      <img src="ChatGPT Image 27 sep. 2025 01_08_41.png" alt="Misc.">
+      <h2>Misc.</h2>
+      <p>Övriga kalkylatorer och material.</p>
+    </a>
+  </main>
 </body>
-
 </html>
-
-
-

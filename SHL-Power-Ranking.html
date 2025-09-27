@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHL Power Ranking | Hockeyportalen</title>
+  <link rel="stylesheet" href="CSS/power-ranking.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d1b2a;
+      color: #e0e1dd;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1b263b;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #f4a261;
+    }
+
+    nav a {
+      color: #e0e1dd;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #f4a261;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #1b263b;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    main h2 {
+      color: #f4a261;
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hockeyportalen</h1>
+    <nav>
+      <a href="index.html">🏠 Hem</a>
+      <a href="06-era.html">06-era</a>
+      <a href="Expansion-era.html">Expansion-era</a>
+      <a href="SHL.html">SHL</a>
+      <a href="SHL-Fantasy.html">Fantasy</a>
+      <a href="SHL-Power-Ranking.html">Power Ranking</a>
+      <a href="VsX.html">VsX</a>
+      <a href="NHL-All-time-ranking.html">NHL All time ranking</a>
+      <a href="Misc.html">Misc.</a>
+    </nav>
+  </header>
+
+  <main>
+    <h3>Uppdaterat 26/9-25 - 23:13</h3>
+  
+  <button onclick="loadCSV()">Uppdatera tabell</button>
+
+  <div id="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Lag</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody id="ranking-body">
+        <!-- Tabellen fylls av JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Mappa lagnamn till loggor
+    const logos = {
+      "Färjestad BK": "logos/farjestad.png",
+      "Timrå IK": "logos/timra.png",
+      "Luleå Hockey": "logos/lulea.png",
+      "Växjö Lakers": "logos/vaxjo.png",
+      "Skellefteå AIK": "logos/skelleftea.png",
+      "Frölunda HC": "logos/frolunda.png",
+      "Leksands IF": "logos/leksand.png",
+      "Örebro Hockey": "logos/orebro.png",
+      "Rögle BK": "logos/rogle.png",
+      "Djurgården Hockey": "logos/djurgarden.png",
+      "HV71": "logos/hv71.png",
+      "Brynäs IF": "logos/brynas.png",
+      "Linköping HC": "logos/linkoping.png",
+      "Malmö Redhawks": "logos/malmo.png"
+    };
+
+    async function loadCSV() {
+      const response = await fetch('ranking.csv');
+      const text = await response.text();
+      const lines = text.trim().split('\n');
+      const tbody = document.getElementById('ranking-body');
+      tbody.innerHTML = '';
+
+      for (let line of lines) {
+        const [lag, poang] = line.split(',');
+        const tr = document.createElement('tr');
+
+        const tdLag = document.createElement('td');
+        const img = document.createElement('img');
+        img.src = logos[lag.trim()];
+        img.alt = lag.trim();
+        img.width = 40;
+        img.height = 40;
+        tdLag.appendChild(img);
+
+        const tdPoang = document.createElement('td');
+        tdPoang.textContent = poang.trim();
+
+        tr.appendChild(tdLag);
+        tr.appendChild(tdPoang);
+        tbody.appendChild(tr);
+      }
+    }
+
+    // Ladda tabellen direkt när sidan öppnas
+    window.onload = loadCSV;
+  </script>
+  </main>
+
+  <footer>
+    &copy; 2025 Hockeyportalen
+  </footer>
+</body>
+</html>

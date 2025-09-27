@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="JS/1967-2021.js"></script>
+  <title>Expansion-era | Hockeyportalen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d1b2a;
+      color: #e0e1dd;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1b263b;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #f4a261;
+    }
+
+    nav a {
+      color: #e0e1dd;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #f4a261;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #1b263b;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    main h2 {
+      color: #f4a261;
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hockeyportalen</h1>
+    <nav>
+      <a href="index.html">🏠 Hem</a>
+      <a href="06-era.html">06-era</a>
+      <a href="Expansion-era.html">Expansion-era</a>
+      <a href="SHL.html">SHL</a>
+      <a href="SHL-Fantasy.html">Fantasy</a>
+      <a href="SHL-Power-Ranking.html">Power Ranking</a>
+      <a href="VsX.html">VsX</a>
+      <a href="NHL-All-time-ranking.html">NHL All time ranking</a>
+      <a href="Misc.html">Misc.</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Expansion-era</h2>
+    <p>Enter the amount of <b>games</b> played, <b>goals</b> scored and <b>assists</b> by your player for each season you want to adjust for:</p>
+    <p>Season 1967-68: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames67" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals67" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists67" value="0"></p>
+
+    <p>Season 1968-69: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames68" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals68" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists68" value="0"></p>
+
+    <p>Season 1969-70: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames69" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals69" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists69" value="0"></p>
+
+    <p>Season 1970-71: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames70" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals70" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists70" value="0"></p>
+
+    <p>Season 1971-72: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames71" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals71" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists71" value="0"></p>
+
+    <p>Season 1972-73: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames72" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals72" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists72" value="0"></p>
+
+    <p>Season 1973-74: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames73" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals73" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists73" value="0"></p>
+
+    <p>Season 1974-75: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames74" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals74" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists74" value="0"></p>
+
+    <p>Season 1975-76: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames75" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals75" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists75" value="0"></p>
+
+    <p>Season 1976-77: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames76" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals76" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists76" value="0"></p>
+
+    <p>Season 1977-78: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames77" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals77" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists77" value="0"></p>
+
+    <p>Season 1978-79: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames78" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals78" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists78" value="0"></p>
+
+    <p>Season 1979-80: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames79" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals79" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists79" value="0"></p>
+
+    <p>Season 1980-81: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames80" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals80" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists80" value="0"></p>
+
+    <p>Season 1981-82: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames81" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals81" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists81" value="0"></p>
+
+    <p>Season 1982-83: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames82" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals82" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists82" value="0"></p>
+
+    <p>Season 1983-84: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames83" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals83" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists83" value="0"></p>
+
+    <p>Season 1984-85: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames84" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals84" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists84" value="0"></p>
+
+    <p>Season 1985-86: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames85" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals85" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists85" value="0"></p>
+
+    <p>Season 1986-87: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames86" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals86" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists86" value="0"></p>
+
+    <p>Season 1987-88: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames87" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals87" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists87" value="0"></p>
+
+    <p>Season 1988-89: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames88" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals88" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists88" value="0"></p>
+
+    <p>Season 1989-90: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames90" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals90" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists90" value="0"></p>
+
+    <p>Season 1990-91: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames91" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals91" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists91" value="0"></p>
+
+    <p>Season 1991-92: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames92" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals92" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists92" value="0"></p>
+
+    <p>Season 1992-93: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames93" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals93" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists93" value="0"></p>
+
+    <p>Season 1993-94: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames94" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals94" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists94" value="0"></p>
+
+    <p>Season 1994-95: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames95" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals95" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists95" value="0"></p>
+
+    <p>Season 1995-96: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames96" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals96" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists96" value="0"></p>
+
+    <p>Season 1996-97: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames97" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals97" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists97" value="0"></p>
+
+    <p>Season 1997-98: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames98" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals98" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists98" value="0"></p>
+
+    <p>Season 1998-99: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames99" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals99" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists99" value="0"></p>
+
+    <p>Season 1999-00: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames00" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals00" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists00" value="0"></p>
+
+    <p>Season 2000-01: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames01" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals01" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists01" value="0"></p>
+
+    <p>Season 2001-02: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames02" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals02" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists02" value="0"></p>
+
+    <p>Season 2002-03: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames03" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals03" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists03" value="0"></p>
+
+    <p>Season 2003-04: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames04" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals04" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists04" value="0"></p>
+
+    <p>Season 2005-06: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames06" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals06" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists06" value="0"></p>
+
+    <p>Season 2006-07: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames07" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals07" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists07" value="0"></p>
+
+    <p>Season 2007-08: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames08" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals08" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists08" value="0"></p>
+
+    <p>Season 2008-09: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames09" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals09" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists09" value="0"></p>
+
+    <p>Season 2009-10: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames10" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals10" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists10" value="0"></p>
+
+    <p>Season 2010-11: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames11" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals11" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists11" value="0"></p>
+
+    <p>Season 2011-12: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames12" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals12" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists12" value="0"></p>
+
+    <p>Season 2012-13: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames13" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals13" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists13" value="0"></p>
+
+    <p>Season 2013-14: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames14" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals14" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists14" value="0"></p>
+
+    <p>Season 2014-15: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames15" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals15" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists15" value="0"></p>
+
+    <p>Season 2015-16: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames16" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals16" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists16" value="0"></p>
+
+    <p>Season 2016-17: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames17" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals17" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists17" value="0"></p>
+
+    <p>Season 2017-18: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames18" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals18" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists18" value="0"></p>
+
+    <p>Season 2018-19: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames19" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals19" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists19" value="0"></p>
+
+    <p>Season 2019-20: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames20" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals20" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists20" value="0"></p>
+
+    <p>Season 2020-21: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames21" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals21" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists21" value="0"></p>
+
+    <p>Season 2021-22: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames22" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals22" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists22" value="0"></p>
+
+        <p>Season 2022-23: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames23" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals23" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists23" value="0"></p>
+
+    <p>Season 2023-24: 
+        <br>
+    <input type="text" onfocus="this.value=''" id="myGames24" value="0">
+    <input type="text" onfocus="this.value=''" id="myGoals24" value="0">
+    <input type="text" onfocus="this.value=''" id="myAssists24" value="0"></p>
+    <hr>
+
+<p>Click the "Adjust"-button to adjust for games played, goals and assists.</p>
+
+<button onclick="myFunction()">Adjust</button>
+<br>
+<br>
+<p id="demo"></p>
+  </main>
+
+  <footer>
+    &copy; 2025 Hockeyportalen
+  </footer>
+</body>
+</html>
