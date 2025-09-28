@@ -79,19 +79,60 @@
 
   <main>
     <h2>SHL Fantasy</h2>
-    <p>
-      Välkommen till 06-era-sidan! Här kan du lägga in statistik, grafer, kalkylatorer
-      eller vad du vill som rör den här eran.
-    </p>
+    <button onclick="loadSheet()">Uppdatera tabell</button>
 
-    <p>
-      Exempel: du kan bädda in dina JS-kalkylatorer direkt här, lägga till tabeller
-      eller länka Excel-filer.
-    </p>
+  <div id="data-container">
+    <table>
+      <thead id="sheet-head"></thead>
+      <tbody id="sheet-body"></tbody>
+    </table>
+  </div>
+
+  <script>
+    const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTG6lh9DMuuWraABnmK_vYez0EhWYN2VOHyUK12RpSS20w1r0fKV5Q4MjNXKlWeiyw1N5-5oaTTBfoA/pub?output=csv";
+
+    async function loadSheet() {
+      const response = await fetch(SHEET_URL + "&cacheBust=" + Date.now());
+      const text = await response.text();
+
+      const lines = text.trim().split(/\r?\n/).filter(Boolean);
+      const rows = lines.map(line => line.split(","));
+
+      const thead = document.getElementById("sheet-head");
+      const tbody = document.getElementById("sheet-body");
+      thead.innerHTML = "";
+      tbody.innerHTML = "";
+
+      // Rubrikrad
+      if (rows.length > 0) {
+        const tr = document.createElement("tr");
+        rows[0].forEach(col => {
+          const th = document.createElement("th");
+          th.textContent = col.trim();
+          tr.appendChild(th);
+        });
+        thead.appendChild(tr);
+      }
+
+      // Dataceller
+      for (let i = 1; i < rows.length; i++) {
+        const tr = document.createElement("tr");
+        rows[i].forEach(col => {
+          const td = document.createElement("td");
+          td.textContent = col.trim();
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      }
+    }
+
+    window.onload = loadSheet;
+  </script>
   </main>
 
   <footer>
     &copy; 2025 Hockeyportalen
   </footer>
 </body>
+
 </html>
