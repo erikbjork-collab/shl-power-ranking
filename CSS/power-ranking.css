@@ -44,6 +44,9 @@ tr:hover {
   color: black;   /* färg på poängen */
   font-weight: bold;
 }
+#table-container {
+  padding-bottom: 2rem;   /* eller 20px */
+}
 
 
 
